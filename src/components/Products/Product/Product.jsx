@@ -1,15 +1,23 @@
 import React from "react";
 import "./Product.scss";
-import prod1 from "../../../assets/products/earbuds-prod-1.webp";
-const Product = () => {
+import { useNavigate } from "react-router-dom";
+const Product = ({ data, id }) => {
+  // console.log(data);
+  const navigate = useNavigate();
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => navigate(`/product/${id}`)}>
       <div className="thumbnail">
-        <img src={prod1} alt="" />
+        <img
+          src={
+            process.env.REACT_APP_DEV_URL +
+            data.attributes.img.data[0].attributes.url
+          }
+          alt=""
+        />
       </div>
       <div className="prod-details">
-        <span className="name">Product Name</span>
-        <span className="price">$499</span>
+        <span className="name">{data.attributes.title}</span>
+        <span className="price">${data.attributes.price}</span>
       </div>
     </div>
   );

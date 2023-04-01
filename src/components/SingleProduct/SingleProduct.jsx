@@ -7,16 +7,21 @@ import {
   FaPinterest,
   FaCartPlus,
 } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import prod1 from "../../assets/products/earbuds-prod-1.webp";
+import useFetch from "../../hooks/useFetch";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import "./SingleProduct.scss";
 const SingleProduct = () => {
+  const { id } = useParams();
+  const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+  console.log(data);
   return (
     <div className="single-product-main-content">
       <div className="layout">
         <div className="single-product-page">
           <div className="left">
-            <img src={prod1} alt="" />
+            <img src="" alt="" />
           </div>
           <div className="right">
             <span className="name">Product Name</span>
