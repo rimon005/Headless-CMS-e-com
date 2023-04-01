@@ -5,6 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import "./Header.scss";
 import Cart from "../Cart/Cart";
 import Search from "./Search/Search";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,16 +23,21 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
+
+  // navigate
+  const navigate = useNavigate();
   return (
     <>
       <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
         <div className="header-content">
           <ul className="left">
-            <li>Home</li>
+            <li onClick={() => navigate("/")}>Home</li>
             <li>About</li>
             <li>Categories</li>
           </ul>
-          <div className="center">Headless Store</div>
+          <div className="center" onClick={() => navigate("/")}>
+            Headless Store
+          </div>
           <div className="right">
             <TbSearch onClick={() => setShowSearch(true)} />
             <AiOutlineHeart />
