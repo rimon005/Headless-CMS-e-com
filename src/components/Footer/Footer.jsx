@@ -18,18 +18,15 @@ const Footer = () => {
           <div className="title">Contact</div>
           <div className="c-item">
             <FaLocationArrow />
-            <div className="text">
-              Kayaloram Rd, Punnamada, Kottankulangara, Alappuzha, Kerala,
-              688006
-            </div>
+            <div className="text">Lakshmipur , Bangladesh</div>
           </div>
           <div className="c-item">
             <FaMobileAlt />
-            <div className="text">Phone: 0471 272 0261</div>
+            <div className="text">Phone: +088 01734 942081</div>
           </div>
           <div className="c-item">
             <FaEnvelope />
-            <div className="text">Email: store@jsdev.com</div>
+            <div className="text">Email: asifiqbalrimon33@.com</div>
           </div>
         </div>
         <div className="col">
