@@ -21,6 +21,14 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <SingleProduct />,
       },
+      {
+        path: "/success",
+        element: (
+          <h1 style={{ padding: "20px", color: "#8E2DE2" }}>
+            Payment Successfully
+          </h1>
+        ),
+      },
     ],
   },
 ]);

@@ -1,0 +1,11 @@
+.loading {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 540px) {
+  .loading {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

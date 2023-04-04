@@ -1,36 +1,18 @@
 import React, { useContext } from "react";
 import "./CartItem.scss";
-import prod1 from "../../../assets/products/earbuds-prod-1.webp";
 import { MdClose } from "react-icons/md";
 import { Context } from "../../../utils/context";
 const CartItem = () => {
   const { cartItems, handleRemoveFromCart, handleCartProductQuantity } =
     useContext(Context);
-
-  // quantity
-
-  const decrement = () => {
-    // setQuantity((prevState) => {
-    //   if (prevState === 1) return 1;
-    //   return prevState - 1;
-    // });
-  };
-  const increment = () => {
-    // setQuantity((prevState) => prevState + 1);
-  };
+  console.log(cartItems);
 
   return (
     <div className="cart-products">
       {cartItems.map((item) => (
         <div key={item.id} className="cart-product">
           <div className="image-container">
-            <img
-              src={
-                process.env.REACT_APP_DEV_URL +
-                item?.attributes?.img.data[0].attributes.url
-              }
-              alt=""
-            />
+            <img src={item?.attributes?.img.data.attributes.url} alt="" />
           </div>
           <div className="prod-details">
             <span className="name">{item.attributes.title}</span>

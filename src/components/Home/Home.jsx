@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { fetchData } from "../../utils/api";
 import { Context } from "../../utils/context";
 import Products from "../Products/Products";
@@ -29,10 +28,6 @@ const Home = () => {
       setProducts(res);
     });
   };
-
-  // navigate
-
-  const navigate = useNavigate();
   return (
     <div className="home">
       <Banner />
